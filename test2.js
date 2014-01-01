@@ -1,19 +1,17 @@
 // similar to test.js, but connects to this IP address
 
 var irobot  = require('./index')
-  , demos   = require('./lib/demos')
-  , roowifi = require('./lib/roowifi')
   , ipaddr  = '192.168.1.63'
   ;
 
-roowifi.RooWifi({ ipaddr: ipaddr }, function(err, options) {
+irobot.roowifi.RooWifi({ ipaddr: ipaddr }, function(err, options) {
   if (!!err) return console.log(err);
 
   var robot = new irobot.Robot('tcp', options);
 
   robot.on('ready', function () {
     console.log('READY');
-    setTimeout(function() { robot.demo(demos.Mouse); }, 1000);
+    setTimeout(function() { robot.demo(irobot.demos.Mouse); }, 1000);
   });
 
 /*
