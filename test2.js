@@ -12,9 +12,9 @@ irobot.roowifi.RooWifi({ ipaddr: ipaddr }, function(err, options) {
 
   robot.on('ready', function () {
     console.log('READY');
-    setTimeout(function() { robot.demo(irobot.demos.Cover); }, 1000);
-    setTimeout(function() { robot.halt();                   }, 10000);
-    setTimeout(function() { process.exit(0);                }, 12000);
+    setTimeout(function() { robot.demo(irobot.demos.SpotCover); }, 1000);
+    setTimeout(function() { robot.halt();                       }, 10000);
+    setTimeout(function() { process.exit(0);                    }, 12000);
   });
 
 /*
